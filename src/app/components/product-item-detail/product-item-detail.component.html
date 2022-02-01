@@ -1,0 +1,19 @@
+<div class="detail-container">
+  <div class="detail-item">
+    <img src="{{ product.url }}" />
+  </div>
+  <div class="detail-item">
+    <h3>{{ product.name }}</h3>
+    <br />
+    <label> ${{ product.price }}</label>
+    <br />
+    <label> {{ product.description }}</label>
+    <br />
+    <input type="number" value="{{ product.quantity }}" />
+    <br />
+    <br />
+    <button>Add to cart</button>
+    <br />
+    <a routerLink="/">Back to product list</a>
+  </div>
+</div>

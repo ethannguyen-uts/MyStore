@@ -1,0 +1,11 @@
+<div class="product-container">
+  <div routerLink="products/{{ product.name }}" class="image-container">
+    <img src="{{ product.url }}" />
+  </div>
+  <label>{{ product.name }}</label>
+  <br />
+  <label>${{ product.price }}</label>
+  <br />
+  <input type="number" name="quantity" value="{{ product.quantity }}" />
+  <button (click)="add(product)">Add to cart</button>
+</div>
