@@ -6,6 +6,7 @@
   cursor: pointer;
 }
 .image-container img {
+  display: flex;
   width: 100%; /* or any custom size */
   height: 100%;
   object-fit: contain;
@@ -18,6 +19,9 @@
   align-items: center;
   justify-content: flex-start;
   margin: 20px 20px 0 20px;
+}
+.select-input {
+  margin-bottom: 10px;
 }
 input {
   width: 50px;
