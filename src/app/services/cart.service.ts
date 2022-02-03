@@ -21,6 +21,20 @@ export class CartService {
     this.total += product.price * product.quantity;
     return this.listProduct;
   };
+  cartItemUpdate = (product: Product): Product[] => {
+    const productIndex = this.listProduct.findIndex(
+      (item) => item.name === product.name
+    );
+    if (productIndex !== -1) {
+      if (product.quantity === 0) {
+        this.listProduct.splice(productIndex, 1);
+      } else {
+        this.listProduct[productIndex].quantity = product.quantity;
+      }
+      this.getTotal();
+    }
+    return this.listProduct;
+  };
   removeFromCart = (product: Product): Product[] => {
     const productIndex = this.listProduct.findIndex(
       (item) => item.name === product.name
@@ -47,6 +61,11 @@ export class CartService {
     return this.listProduct;
   };
   getTotal = (): number => {
+    const result = this.listProduct.reduce(
+      (a: number, b: Product) => a + b.price * b.quantity,
+      0
+    );
+    this.total = Math.round(result * 100) / 100;
     return this.total;
   };
 }
