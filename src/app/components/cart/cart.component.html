@@ -1,17 +1,18 @@
 <div class="cart-container">
   <div *ngIf="total == 0">
-    <label>Oops, Your cart is empty. </label>
-    <a routerLink="/">Back to shopping!</a>
+    <label>Oops, Your cart is empty!</label>
+    <a routerLink="/">Back to shopping</a>
   </div>
 
   <div *ngIf="total != 0">
     <div class="list-cart-item">
       <div *ngFor="let product of listProduct" class="cart-item">
-        <div class="image-container">
+        <div routerLink="/products/{{ product.name }}" class="image-container">
           <img src="{{ product.url }}" />
         </div>
         <div class="cart-item-details">
           <label>{{ product.name }}</label>
+
           <label>${{ product.price }}</label>
           <input
             class="number-input"
@@ -19,7 +20,7 @@
             type="number"
             name="Amount"
             value="{{ product.quantity }}"
-            (change)="cartItemUpdate(product)"
+            (ngModelChange)="cartItemUpdate(product)"
           />
           <button class="btn btn-delete" (click)="removeProduct(product)">
             Remove

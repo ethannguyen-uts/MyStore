@@ -9,13 +9,16 @@
     <br />
     <label> {{ product.description }}</label>
     <br />
-    <select class="select-input" [ngModel]="selectedQuantity">
+    <select class="select-input" [(ngModel)]="selectedQuantity">
       <option *ngFor="let option of options" [ngValue]="option">
         {{ option }}
       </option>
     </select>
     <br />
-    <button class="btn btn-primary" (click)="addToCart(product)">
+    <button
+      class="btn btn-primary"
+      (click)="addToCart(selectedQuantity, product)"
+    >
       Add to cart
     </button>
     <br />

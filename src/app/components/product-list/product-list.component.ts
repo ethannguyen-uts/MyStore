@@ -20,12 +20,13 @@ export class ProductListComponent implements OnInit {
   }
   getProducts = () => {
     this.productService.getProducts().subscribe((res: Product[]) => {
-      res.map((product: Product) => (product.quantity = 1));
+      //res.map((product: Product) => (product.quantity = 1));
       this.productList = res;
       this.productService.setProductList(res);
     });
   };
-  addToCart = (product: Product) => {
-    this.cartService.addToCart(product);
+  addToCart = (data: { quantity: number; product: Product }) => {
+    this.cartService.addToCart(data.quantity, data.product);
+    alert(`${data.quantity} ${data.product.name} has been added to cart!`);
   };
 }

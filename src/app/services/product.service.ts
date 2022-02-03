@@ -8,14 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
   productList: Product[] = [];
-  constructor(private http: HttpClient) {
-    this.getProducts().subscribe((res: Product[]) => {
-      res.map((product: Product) => (product.quantity = 1));
-      this.productList = res;
-      console.log('Loading product service');
-      console.log(this.productList);
-    });
-  }
+  constructor(private http: HttpClient) {}
   getProducts = (): Observable<Product[]> => {
     return this.http.get<Product[]>('./assets/data.json');
   };

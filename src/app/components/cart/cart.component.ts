@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
-import { CartService } from '../../services/cart.service';
+import { CartService, CART_STATUS } from '../../services/cart.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 
@@ -11,7 +11,6 @@ import { User } from 'src/app/models/user';
 })
 export class CartComponent implements OnInit {
   user: User = new User();
-  fullName: string = '';
   listProduct: Product[] = [];
   total: number = 0;
   constructor(private cartService: CartService, private router: Router) {}
@@ -25,7 +24,6 @@ export class CartComponent implements OnInit {
     this.total = this.cartService.getTotal();
   };
   cartItemUpdate = (product: Product): void => {
-    console.log(product);
     this.listProduct = this.cartService.cartItemUpdate(product);
     this.total = this.cartService.getTotal();
   };
@@ -34,6 +32,8 @@ export class CartComponent implements OnInit {
     this.total = this.cartService.getTotal();
   };
   onSubmit = () => {
+    this.cartService.setUser(this.user);
+    this.cartService.setStatus(CART_STATUS.complete);
     this.router.navigateByUrl('/confirmation');
   };
 }

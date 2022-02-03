@@ -36,9 +36,8 @@ export class ProductItemDetailComponent implements OnInit {
     const product = this.productService.getProductByName(productName);
     product ? (this.product = product) : null;
   };
-  addToCart = (product: Product) => {
-    console.log(this.selectedQuantity);
-    product.quantity = this.selectedQuantity;
-    this.cartService.addToCart(product);
+  addToCart = (quantity: number, product: Product) => {
+    this.cartService.addToCart(quantity, product);
+    alert(`${quantity} ${product.name} has been added to cart!`);
   };
 }
