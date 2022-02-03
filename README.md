@@ -8,9 +8,13 @@ Project features:
 The application reflects the same user experience as that of a real-world e-commerce website, including a(n):
 
 Product list page: `/`, which displays the available products for the user to choose and add to their cart (in various quantities).
+<br />
 Product details page: `/products/:productName`, which displays more information about any particular product.
+<br />
 Shopping cart: `/cart`, which includes the products that the user has added to their cart.
+<br />
 Checkout form: `/cart`, which collects information about the user (e.g., name, address, payment details, etc.).
+<br />
 Order confirmation page: `/confirmation`, which shows the outcome after the user completes the checkout process (i.e., submits the checkout form).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
