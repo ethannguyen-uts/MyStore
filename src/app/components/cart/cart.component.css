@@ -15,8 +15,8 @@ img {
 
 .cart-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
   margin-top: 64px;
 }
 
@@ -33,25 +33,22 @@ img {
 
 .form {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  flex-flow: wrap column;
   width: 250px;
+
+  justify-content: flex-start;
 }
 .form-margin {
-  margin: 12px 20px 30px 100px;
+  margin: 0 20px;
 }
 .form label {
   margin-bottom: 6px;
 }
 .form input {
-  margin-bottom: 6px;
-  width: 200px;
   padding: 2px;
 }
 
 .form button {
-  margin-bottom: 6px;
-  width: 60px;
 }
 
 .placeholder {
@@ -98,9 +95,11 @@ img {
   margin-top: 64px;
 }
 .total {
-  padding-top: 20px;
+  margin: 20px 20px;
   font-size: 20px;
   font-family: serif;
+  border-bottom: 1px black solid;
+  align-self: center;
 }
 
 .errorMessage {

@@ -3,33 +3,27 @@
     <label>Oops, Your cart is empty!</label>
     <a routerLink="/">Back to shopping</a>
   </div>
-
-  <div *ngIf="total != 0">
-    <div class="list-cart-item">
-      <div *ngFor="let product of listProduct" class="cart-item">
-        <div routerLink="/products/{{ product.name }}" class="image-container">
-          <img src="{{ product.url }}" />
-        </div>
-        <div class="cart-item-details">
-          <label>{{ product.name }}</label>
-
-          <label>${{ product.price }}</label>
-          <input
-            class="number-input"
-            [(ngModel)]="product.quantity"
-            type="number"
-            name="Amount"
-            value="{{ product.quantity }}"
-            (ngModelChange)="cartItemUpdate(product)"
-          />
-          <button class="btn btn-delete" (click)="removeProduct(product)">
-            Remove
-          </button>
-        </div>
+  <div *ngIf="total !== 0" class="list-cart-item">
+    <div *ngFor="let product of listProduct" class="cart-item">
+      <div routerLink="/products/{{ product.name }}" class="image-container">
+        <img src="{{ product.url }}" />
       </div>
-    </div>
-    <div>
-      <label class="total">Amount: ${{ total }}</label>
+      <div class="cart-item-details">
+        <label>{{ product.name }}</label>
+
+        <label>${{ product.price }}</label>
+        <input
+          class="number-input"
+          [(ngModel)]="product.quantity"
+          type="number"
+          name="Amount"
+          value="{{ product.quantity }}"
+          (ngModelChange)="cartItemUpdate(product)"
+        />
+        <button class="btn btn-delete" (click)="removeProduct(product)">
+          Remove
+        </button>
+      </div>
     </div>
   </div>
 
@@ -39,6 +33,8 @@
     *ngIf="total !== 0"
     class="form form-margin"
   >
+    <h3 class="total">Amount: ${{ total }}</h3>
+    <h3>Customer Information</h3>
     <label>Full name</label>
     <input
       type="text"
