@@ -1,29 +1,46 @@
-<div class="cart-container">
-  <div *ngIf="total == 0">
-    <label>Oops, Your cart is empty!</label>
-    <a routerLink="/">Back to shopping</a>
-  </div>
-  <div *ngIf="total !== 0" class="list-cart-item">
-    <div *ngFor="let product of listProduct" class="cart-item">
-      <div routerLink="/products/{{ product.name }}" class="image-container">
-        <img src="{{ product.url }}" />
-      </div>
-      <div class="cart-item-details">
-        <label>{{ product.name }}</label>
+<div class="wrapper">
+  <div class="cart-container">
+    <div *ngIf="total == 0">
+      <label>Oops, Your cart is empty!</label>
+      <a routerLink="/">Back to shopping</a>
+    </div>
+    <div class="header">
+      <h3>Shopping cart</h3>
+      <h5 (click)="removeAll()" class="remove"><u>Empty Cart</u></h5>
+    </div>
+    <div *ngIf="total !== 0" class="list-cart-item">
+      <div *ngFor="let product of listProduct" class="cart-item">
+        <div
+          routerLink="/products/{{ product.name }}"
+          class="image-container span-col1"
+        >
+          <img src="{{ product.url }}" />
+        </div>
 
-        <label>${{ product.price }}</label>
-        <input
-          class="number-input"
-          [(ngModel)]="product.quantity"
-          type="number"
-          name="Amount"
-          value="{{ product.quantity }}"
-          (ngModelChange)="cartItemUpdate(product)"
-        />
-        <button class="btn btn-delete" (click)="removeProduct(product)">
-          Remove
-        </button>
+        <div class="cart-item-details span-col1">
+          <h3>{{ product.name }}</h3>
+        </div>
+        <div class="span-col1">
+          <input
+            class="number-input"
+            [(ngModel)]="product.quantity"
+            type="number"
+            name="Amount"
+            value="{{ product.quantity }}"
+            (ngModelChange)="cartItemUpdate(product)"
+          />
+        </div>
+        <div class="span-col1 prices">
+          <h4 class="flexend">${{ product.price }}</h4>
+          <label class="flexend remove" (click)="removeProduct(product)">
+            <u> Remove</u>
+          </label>
+        </div>
       </div>
+    </div>
+    <div class="footer">
+      <h3 class="subtotal">Sub-total: ${{ total }}</h3>
+      <a class="checkout-btn">Checkout</a>
     </div>
   </div>
 
