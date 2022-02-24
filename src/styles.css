@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background: linear-gradient(to bottom right, #e3f0ff, #fafcff);
+}
 .btn {
   font-size: 12px;
   padding: 4px 10px;

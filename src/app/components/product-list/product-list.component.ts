@@ -27,6 +27,6 @@ export class ProductListComponent implements OnInit {
   };
   addToCart = (data: { quantity: number; product: Product }) => {
     this.cartService.addToCart(data.quantity, data.product);
-    alert(`${data.quantity} ${data.product.name} has been added to cart!`);
+    //alert(`${data.quantity} ${data.product.name} has been added to cart!`);
   };
 }
