@@ -62,17 +62,18 @@ nav a:hover {
 }
 
 .cart-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: center;
+  position: relative;
 }
 .cart-icon {
-  color: red;
-  font-size: 10px;
+  width: auto;
+  height: 25px;
+  margin: 10px 40px 0px 0px;
+  z-index: 2;
 }
 .badge {
-  margin: 0 0 3px 2px;
+  position: absolute;
+  right: 0;
+  top: 0;
   display: flex;
   background-color: #6394f8;
   color: #fff;
