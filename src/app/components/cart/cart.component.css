@@ -11,22 +11,14 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.image-container {
-  width: 100%;
-  height: 150px;
-  border-radius: 10px;
-  border-width: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .cart-container {
-  margin-top: 64px;
-  width: 70%;
-  height: 90%;
+  height: 90vh;
+  width: 100%;
   background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0px 25px 40px #1687d933;
 }
 
 .header {
@@ -43,64 +35,8 @@ img {
   overflow-y: auto;
 }
 
-.form {
-  display: flex;
-  flex-flow: wrap column;
-  width: 250px;
-
-  justify-content: flex-start;
-}
-.form-margin {
-  margin: 0 20px;
-}
-.form label {
-  margin-bottom: 6px;
-}
-.form input {
-  padding: 2px;
-  text-align: center;
-}
-
-.placeholder {
-  color: darkgray;
-  font-size: 13px;
-}
-
-.cart-item {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  margin-bottom: 20px;
-  padding: 5px;
-  width: 90%;
-  margin: auto;
-}
-
-.span-col1 {
-  grid-column: span 1;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-
 .flexend {
   align-self: flex-end;
-}
-
-.cart-item-details {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: left;
-  margin-left: 40px;
-}
-.cart-item-details label {
-  margin-bottom: 10px;
-}
-
-.cart-item-details input {
-  width: 50px;
 }
 
 .remove {
@@ -121,26 +57,20 @@ img {
   margin-right: 50px;
 }
 
-.empty-cart-message {
+.cart-empty-container {
+  margin-top: 50px;
   display: flex;
+  flex-flow: column wrap;
   justify-content: center;
-  margin-top: 64px;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+  background-color: #fff;
 }
 
 .subtotal {
   text-align: right;
-}
-.total {
-  margin: 20px 20px;
-  font-size: 20px;
-  font-family: serif;
-  border-bottom: 1px black solid;
-  align-self: center;
-}
-
-.errorMessage {
-  color: rgb(238, 90, 90);
-  font-size: 13px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .footer {
@@ -151,17 +81,66 @@ img {
   margin: 0 auto;
 }
 
-.checkout-btn {
-  margin-top: 5px;
-  border: none;
-  padding: 5px 10px;
-  background: linear-gradient(to bottom right, #b8d7ff, #8eb7eb);
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  color: #202020;
-}
 .checkout-btn:hover {
   background: #447bc3;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 90%;
+  margin: auto;
+}
+
+.image-container {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  border-width: 10px;
+  grid-column: span 1;
+  grid-row: span 5;
+}
+
+.product-name {
+  text-align: right;
+  grid-column: 2/3;
+}
+.item-quantity {
+  text-align: right;
+  grid-column: 2/3;
+}
+.prices {
+  text-align: right;
+  grid-column: 2/3;
+}
+
+@media (min-width: 600px) {
+  .cart-item {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+  .image-container {
+    grid-row: span 1;
+  }
+  .product-name {
+    grid-column: 2/3;
+    margin: auto;
+  }
+  .item-quantity {
+    grid-column: 3/4;
+    margin: auto;
+  }
+  .prices {
+    grid-column: 4/5;
+    margin: auto 0;
+  }
+
+  .cart-container {
+    width: 60%;
+    border-radius: 20px;
+    box-shadow: 0px 25px 40px #1687d933;
+  }
 }
