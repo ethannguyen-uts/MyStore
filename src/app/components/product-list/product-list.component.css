@@ -1,9 +1,19 @@
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+  background-color: white;
+}
 .products-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin-top: 50px;
   background-color: #fff;
+  align-content: center;
 }
 .footer {
   padding: 20px 0px;

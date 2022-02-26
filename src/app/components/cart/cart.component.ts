@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 import { CartService, CART_STATUS } from '../../services/cart.service';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-cart',

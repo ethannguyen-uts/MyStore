@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { formatPercent } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { LoaderComponent } from './components/UI/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     ProductListComponent,
     NavBarComponent,
     CheckoutComponent,
+    LoaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
