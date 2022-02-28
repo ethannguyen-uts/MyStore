@@ -14,7 +14,6 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.getQuantityObservable().subscribe((value: number) => {
       if (this.badgeClass == 'badge') this.badgeClass = 'badge bump';
-
       setTimeout(() => {
         this.badgeClass = 'badge';
       }, 301);
