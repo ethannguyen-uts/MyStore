@@ -2,7 +2,13 @@
 
 ## Overview
 
-Project provide an e-commerce website – an application that allows users to view a list of available products to purchase, add them to a shopping cart, and checkout process.
+- Project provide an e-commerce website that allows users to view a list of available products to purchase, add them to a shopping cart, and checkout process.
+- This is the front-end webpage for My Store web page. If you want visit the back-end, please follow this [link](https://github.com/ethannguyen-uts/StorefrontBackend).
+
+## Techstack:
+
+- Angular
+- Karma
 
 ## Project features:
 
@@ -20,10 +26,9 @@ The application reflects the same user experience as that of a real-world e-comm
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
-## Techstack:
+### Demo
 
--Angular
--Karma
+![gif signup](/src/assets/img/demo.gif)
 
 ## To clone the project
 
@@ -39,5 +44,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Deploy
 
-Please follow this link to the deploy repository: [link](https://github.com/ethannguyen-uts/MyStore-fullstack)
-• The project was hosted on AWS Cloud Service (AWS Elastic Beanstalk, AWS S3, AWS RDS) that satisfy the CI/CD using CircleCI pipeline: http://mystore-frontend-bucket.s3-website-us-west-2.amazonaws.com
+- Please follow this [link](https://github.com/ethannguyen-uts/MyStore-fullstack) to the deploy repository.
+- The project was hosted on AWS Cloud Service (AWS Elastic Beanstalk, AWS S3, AWS RDS) that satisfy the CI/CD using CircleCI pipeline: http://mystore-frontend-bucket.s3-website-us-west-2.amazonaws.com
