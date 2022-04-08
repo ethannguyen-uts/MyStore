@@ -4,7 +4,8 @@
 
 Project provide an e-commerce website – an application that allows users to view a list of available products to purchase, add them to a shopping cart, and checkout process.
 
-Project features:
+## Project features:
+
 The application reflects the same user experience as that of a real-world e-commerce website, support reponsive experience, including a(n):
 
 1. Product list page: `/products`, which displays the available products for the user to choose and add to their cart (in various quantities).
@@ -19,6 +20,11 @@ The application reflects the same user experience as that of a real-world e-comm
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
+## Techstack:
+
+-Angular
+-Karma
+
 ## To clone the project
 
 Run `git clone https://github.com/ethannguyen-uts/MyStore-Angular-App.git`
@@ -31,8 +37,7 @@ Navigate to project folder and run `ng build` to build the project. The build ar
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Techstack:
+## Deploy
 
--Angular
--Karma
--Reponsive Design
+Please follow this link to the deploy repository: [link](https://github.com/ethannguyen-uts/MyStore-fullstack)
+• The project was hosted on AWS Cloud Service (AWS Elastic Beanstalk, AWS S3, AWS RDS) that satisfy the CI/CD using CircleCI pipeline: http://mystore-frontend-bucket.s3-website-us-west-2.amazonaws.com
